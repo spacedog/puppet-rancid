@@ -10,7 +10,7 @@ define rancid::router_db (
     command => "rancid-cvs ${name}",
     path    => $rancid_cvs_path,
     user    => $rancid::user_real,
-    unless  => "test -d ${rancid::homedir_real}/${name}/router.db",
+    unless  => "test -f ${rancid::homedir_real}/${name}/router.db",
   }
 
   if ( $devices[$name] ) {
