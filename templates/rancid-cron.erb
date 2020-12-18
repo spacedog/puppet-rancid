@@ -6,4 +6,4 @@ MAILTO=root
 HOME=<%= @homedir_real %>
 
 # Run config differ hourly
-1 * * * * <%= @user_real %> rancid-run
+<%= @cron_time %> <%= @user_real %> rancid-run

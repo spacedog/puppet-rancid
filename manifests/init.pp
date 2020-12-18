@@ -21,6 +21,7 @@ class rancid (
   $group              = 'USE_DEFAULTS',
   $shell              = 'USE_DEFAULTS',
   $cron_d_file        = '/etc/cron.d/rancid',
+  $cron_time          = '1 * * * *',
   $cloginrc_content   = 'USE_DEFAULTS',
   $show_cloginrc_diff = true,
 ) {
@@ -129,6 +130,7 @@ class rancid (
   }
 
   validate_array($groups)
+  validate_string($cron_time)
 
   if !is_array($packages) and !is_string($packages) {
     fail('rancid::packages must be an array or a string.')
